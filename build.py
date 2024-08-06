@@ -681,7 +681,9 @@ n.build(
     'phony',
     [
         os.path.join('$outdir', 'boot.dol'),
-        os.path.join('$outdir', 'meta.xml'),
+        'elf2dol',
+        os.path.join('$builddir', 'loader', 'loader.elf'),
+        implicit = '$elf2dol',
     ],
 )
 n.newline()
